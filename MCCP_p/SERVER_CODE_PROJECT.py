@@ -48,7 +48,7 @@ if __name__=="__main__":
                             good.write(chunk)
                     print("\n >>> downloaded >>> ",filex)
                 else:
-                    print("\n u r stupid file was not found ")
+                    print("\n u r  file was not found ")
                     continue
             # elif cmd.startswith("upload"):
             #         x.send(cmd.encode())
