@@ -50,27 +50,26 @@ if __name__=="__main__":
                 else:
                     print("\n u r  file was not found ")
                     continue
-            # elif cmd.startswith("upload"):
-            #         x.send(cmd.encode())
-            #         filex=cmd.split(maxsplit=1)[1]
+            elif cmd.startswith("upload"):
+                    x.send(cmd.encode())
+                    filex=cmd.split(maxsplit=1)[1]
+                
+                    if os.path.exists(filex):
+                        ans="yes"
+                        x.send(ans.encode())
 
-            #         #filex=cmd1.strip("grab ")
-            #         if os.path.exists(filex):
-            #             ans="yes"
-            #             x.send(ans.encode())
-
-            #             with open(filex, "rb") as X:
-            #                 chunk=X.read(size)
-            #                 while len(chunk)>0:
-            #                     x.send(chunk)
-            #                     chunk=X.read(size)
-            #                 x.send(IDENTIFIER.encode())
-            #             print("send was done successful ")
-            #         else:
-            #             print("nope wrong path bro")
-            #             ans="no"
-            #             x.send(ans.encode())
-            #             continue       
+                        with open(filex, "rb") as X:
+                            chunk=X.read(size)
+                            while len(chunk)>0:
+                                x.send(chunk)
+                                chunk=X.read(size)
+                            x.send(IDENTIFIER.encode())
+                        print("send was done successful ")
+                    else:
+                        print("wrong path")
+                        ans="no"
+                        x.send(ans.encode())
+                        continue       
 
 
             else:
